@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		0577CB1D1F3065C40072BEE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0577CB1C1F3065C40072BEE2 /* AppDelegate.swift */; };
-		0577CB1F1F3065C40072BEE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0577CB1E1F3065C40072BEE2 /* ViewController.swift */; };
 		0577CB221F3065C40072BEE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0577CB201F3065C40072BEE2 /* Main.storyboard */; };
 		0577CB241F3065C40072BEE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0577CB231F3065C40072BEE2 /* Assets.xcassets */; };
 		0577CB271F3065C40072BEE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0577CB251F3065C40072BEE2 /* LaunchScreen.storyboard */; };
+		0577CB421F311D400072BEE2 /* InputViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0577CB411F311D400072BEE2 /* InputViewCell.swift */; };
+		0577CB441F311D780072BEE2 /* TipTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0577CB431F311D780072BEE2 /* TipTableViewController.swift */; };
+		0577CB461F312DC30072BEE2 /* TipPercentageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0577CB451F312DC30072BEE2 /* TipPercentageViewCell.swift */; };
+		0577CB481F3132560072BEE2 /* TipAmountViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0577CB471F3132560072BEE2 /* TipAmountViewCell.swift */; };
+		0577CB4A1F3132650072BEE2 /* FinalAmountViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0577CB491F3132650072BEE2 /* FinalAmountViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0577CB191F3065C40072BEE2 /* TipCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0577CB1C1F3065C40072BEE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0577CB1E1F3065C40072BEE2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0577CB211F3065C40072BEE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0577CB231F3065C40072BEE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0577CB261F3065C40072BEE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0577CB281F3065C40072BEE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0577CB411F311D400072BEE2 /* InputViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputViewCell.swift; sourceTree = "<group>"; };
+		0577CB431F311D780072BEE2 /* TipTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipTableViewController.swift; sourceTree = "<group>"; };
+		0577CB451F312DC30072BEE2 /* TipPercentageViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipPercentageViewCell.swift; sourceTree = "<group>"; };
+		0577CB471F3132560072BEE2 /* TipAmountViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipAmountViewCell.swift; sourceTree = "<group>"; };
+		0577CB491F3132650072BEE2 /* FinalAmountViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalAmountViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +63,41 @@
 			isa = PBXGroup;
 			children = (
 				0577CB1C1F3065C40072BEE2 /* AppDelegate.swift */,
-				0577CB1E1F3065C40072BEE2 /* ViewController.swift */,
-				0577CB201F3065C40072BEE2 /* Main.storyboard */,
+				0577CB311F30E55F0072BEE2 /* Storyboard */,
 				0577CB231F3065C40072BEE2 /* Assets.xcassets */,
-				0577CB251F3065C40072BEE2 /* LaunchScreen.storyboard */,
 				0577CB281F3065C40072BEE2 /* Info.plist */,
+				0577CB341F30E7FB0072BEE2 /* View */,
+				0577CB301F30E5410072BEE2 /* Controllers */,
 			);
 			path = TipCalculator;
+			sourceTree = "<group>";
+		};
+		0577CB301F30E5410072BEE2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0577CB431F311D780072BEE2 /* TipTableViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		0577CB311F30E55F0072BEE2 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				0577CB201F3065C40072BEE2 /* Main.storyboard */,
+				0577CB251F3065C40072BEE2 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		0577CB341F30E7FB0072BEE2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0577CB411F311D400072BEE2 /* InputViewCell.swift */,
+				0577CB451F312DC30072BEE2 /* TipPercentageViewCell.swift */,
+				0577CB471F3132560072BEE2 /* TipAmountViewCell.swift */,
+				0577CB491F3132650072BEE2 /* FinalAmountViewCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +173,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0577CB1F1F3065C40072BEE2 /* ViewController.swift in Sources */,
+				0577CB461F312DC30072BEE2 /* TipPercentageViewCell.swift in Sources */,
+				0577CB421F311D400072BEE2 /* InputViewCell.swift in Sources */,
+				0577CB481F3132560072BEE2 /* TipAmountViewCell.swift in Sources */,
+				0577CB4A1F3132650072BEE2 /* FinalAmountViewCell.swift in Sources */,
 				0577CB1D1F3065C40072BEE2 /* AppDelegate.swift in Sources */,
+				0577CB441F311D780072BEE2 /* TipTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +342,7 @@
 				0577CB2D1F3065C40072BEE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
