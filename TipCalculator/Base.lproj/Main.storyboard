@@ -1,14 +1,23 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RC6-Ns-ZaL">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TipCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -21,6 +30,97 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="977" y="-236"/>
+        </scene>
+        <!--Tip Calculator-->
+        <scene sceneID="iTS-jZ-MCv">
+            <objects>
+                <tableViewController id="0u1-iS-Zds" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="me5-Ta-PR1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="85" id="7v2-2D-V86">
+                                <rect key="frame" x="0.0" y="28" width="375" height="85"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7v2-2D-V86" id="QfM-ww-IF5">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="84.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="225" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3TL-kJ-Y2z">
+                                            <rect key="frame" x="12" y="12" width="351" height="60.5"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="45"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="3TL-kJ-Y2z" firstAttribute="leading" secondItem="QfM-ww-IF5" secondAttribute="leading" constant="12" id="MF5-uv-V2X"/>
+                                        <constraint firstAttribute="bottom" secondItem="3TL-kJ-Y2z" secondAttribute="bottom" constant="12" id="eM2-Yz-pVz"/>
+                                        <constraint firstItem="3TL-kJ-Y2z" firstAttribute="top" secondItem="QfM-ww-IF5" secondAttribute="top" constant="12" id="hKi-GZ-osV"/>
+                                        <constraint firstAttribute="trailing" secondItem="3TL-kJ-Y2z" secondAttribute="trailing" constant="12" id="o68-tY-4ub"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <inset key="separatorInset" minX="12" minY="0.0" maxX="12" maxY="0.0"/>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="qgG-hA-Cwv">
+                                <rect key="frame" x="0.0" y="113" width="375" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qgG-hA-Cwv" id="fAK-YD-0zT">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="BoM-do-TD5">
+                                            <rect key="frame" x="24" y="24" width="327" height="29"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="V9t-vr-s94"/>
+                                            </constraints>
+                                            <segments>
+                                                <segment title="10%"/>
+                                                <segment title="15%"/>
+                                                <segment title="20%"/>
+                                            </segments>
+                                        </segmentedControl>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="BoM-do-TD5" firstAttribute="top" secondItem="fAK-YD-0zT" secondAttribute="top" constant="24" id="2Zv-de-wHo"/>
+                                        <constraint firstItem="BoM-do-TD5" firstAttribute="centerX" secondItem="fAK-YD-0zT" secondAttribute="centerX" id="8EA-pT-i4O"/>
+                                        <constraint firstAttribute="bottom" secondItem="BoM-do-TD5" secondAttribute="bottom" constant="24" id="K52-6C-APA"/>
+                                        <constraint firstItem="BoM-do-TD5" firstAttribute="leading" secondItem="fAK-YD-0zT" secondAttribute="leading" constant="24" id="LjY-Be-Bu7"/>
+                                        <constraint firstAttribute="trailing" secondItem="BoM-do-TD5" secondAttribute="trailing" constant="24" id="YC9-Oc-vfm"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="0u1-iS-Zds" id="gWX-XM-cbE"/>
+                            <outlet property="delegate" destination="0u1-iS-Zds" id="ozK-VC-xgM"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Tip Calculator" id="IHs-dy-1dM">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="JS9-dz-efa"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3P8-0d-7kj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="452" y="465.51724137931041"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vAm-3R-NuT">
+            <objects>
+                <navigationController id="RC6-Ns-ZaL" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gjm-v7-0br">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="0u1-iS-Zds" kind="relationship" relationship="rootViewController" id="zAd-5h-Pzp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="75y-59-1ow" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-460" y="466"/>
         </scene>
     </scenes>
 </document>
