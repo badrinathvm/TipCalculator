@@ -18,6 +18,10 @@ class TipTableViewController: UITableViewController {
     var finalAmount:FinalAmountViewCell?
     var tipPercentage:TipPercentageViewCell?
     
+
+    @IBOutlet weak var topLayout: NSLayoutConstraint!
+    
+    
     struct Storyboard{
         static let inputView = "InputViewCell"
         static let tipPercentage = "TipPercentageViewCell"
@@ -43,17 +47,12 @@ class TipTableViewController: UITableViewController {
             input?.updateTextValue = amount
             
             //set back row height 
-            //self.tip?.isHidden = false
-            //self.tipPercentage?.isHidden = false
-            //self.finalAmount?.isHidden = false
+            self.tip?.isHidden = false
+            self.tipPercentage?.isHidden = false
+            self.finalAmount?.isHidden = false
             
-            let currentOffset = tableView.contentOffset
-            UIView.setAnimationsEnabled(false)
-            tableView.beginUpdates()
-            tableView.endUpdates()
-            UIView.setAnimationsEnabled(true)
-            tableView.setContentOffset(currentOffset, animated: true)
-            
+            //set back to original layout 
+            self.input?.topValue = 3.0
             
             if  (amount.characters.count > 0 ){
                 if (amount.contains(",")){
@@ -98,8 +97,11 @@ extension TipTableViewController{
             
             cell.inputTextField.addTarget(self, action:#selector(textFieldDidChange(textField:)), for: UIControlEvents.allEditingEvents)
             
+            cell.topValue = 40.0
+            
             //required to access
             self.input = cell
+            
         
             return cell
             
@@ -109,7 +111,7 @@ extension TipTableViewController{
             
             self.tipPercentage = cell
             
-             //cell.isHidden = true
+             cell.isHidden = true
             
             return cell
             
@@ -121,7 +123,7 @@ extension TipTableViewController{
             
             self.tip = cell
             
-            //cell.isHidden = true
+            cell.isHidden = true
         
             return cell
             
@@ -131,7 +133,7 @@ extension TipTableViewController{
             
             self.finalAmount = cell
             
-             //cell.isHidden = true
+             cell.isHidden = true
             
             return cell
         }

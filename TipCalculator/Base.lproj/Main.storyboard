@@ -48,6 +48,7 @@
                                 <inset key="separatorInset" minX="12" minY="0.0" maxX="12" maxY="0.0"/>
                                 <connections>
                                     <outlet property="inputTextField" destination="mJh-pT-0vH" id="3Y9-rF-HbN"/>
+                                    <outlet property="topLayout" destination="uPu-gy-HmU" id="EMB-ip-1yc"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TipPercentageViewCell" rowHeight="75" id="CHc-4R-Tbg" customClass="TipPercentageViewCell" customModule="TipCalculator" customModuleProvider="target">

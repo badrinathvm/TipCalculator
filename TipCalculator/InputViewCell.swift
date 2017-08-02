@@ -10,12 +10,19 @@ import UIKit
 
 class InputViewCell: UITableViewCell {
 
+    @IBOutlet weak var topLayout: NSLayoutConstraint!
    
     @IBOutlet weak var inputTextField: UITextField!
     
     var updateTextValue:String!{
         didSet{
             inputTextField.text = updateTextValue
+        }
+    }
+    
+    var topValue: CGFloat!{
+        didSet{
+            topLayout.constant = topValue!
         }
     }
     
