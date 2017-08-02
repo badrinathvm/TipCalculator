@@ -28,7 +28,7 @@ class TipTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.estimatedRowHeight = 70.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
         tableView.tableFooterView = UIView()
@@ -43,9 +43,17 @@ class TipTableViewController: UITableViewController {
             input?.updateTextValue = amount
             
             //set back row height 
-            self.tip?.isHidden = false
-            self.tipPercentage?.isHidden = false
-            self.finalAmount?.isHidden = false
+            //self.tip?.isHidden = false
+            //self.tipPercentage?.isHidden = false
+            //self.finalAmount?.isHidden = false
+            
+            let currentOffset = tableView.contentOffset
+            UIView.setAnimationsEnabled(false)
+            tableView.beginUpdates()
+            tableView.endUpdates()
+            UIView.setAnimationsEnabled(true)
+            tableView.setContentOffset(currentOffset, animated: true)
+            
             
             if  (amount.characters.count > 0 ){
                 if (amount.contains(",")){
@@ -101,7 +109,7 @@ extension TipTableViewController{
             
             self.tipPercentage = cell
             
-             cell.isHidden = true
+             //cell.isHidden = true
             
             return cell
             
@@ -113,7 +121,7 @@ extension TipTableViewController{
             
             self.tip = cell
             
-            cell.isHidden = true
+            //cell.isHidden = true
         
             return cell
             
@@ -123,7 +131,7 @@ extension TipTableViewController{
             
             self.finalAmount = cell
             
-             cell.isHidden = true
+             //cell.isHidden = true
             
             return cell
         }
