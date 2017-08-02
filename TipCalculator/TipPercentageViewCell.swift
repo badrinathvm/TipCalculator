@@ -30,7 +30,12 @@ class TipPercentageViewCell: UITableViewCell {
         default : break
             
         }
+    }
     
+    var selectIndex:Int!{
+        didSet{
+            percentageSegmentControl.selectedSegmentIndex = selectIndex
+        }
     }
 
 }

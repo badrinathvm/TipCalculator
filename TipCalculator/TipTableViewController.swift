@@ -17,6 +17,7 @@ class TipTableViewController: UITableViewController {
     var simplifiedAmount:Double?
     var finalAmount:FinalAmountViewCell?
     var tipPercentage:TipPercentageViewCell?
+    static var settingSave:String?
     
 
     @IBOutlet weak var topLayout: NSLayoutConstraint!
@@ -36,6 +37,18 @@ class TipTableViewController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         
         tableView.tableFooterView = UIView()
+        
+        print("Selected one is \(TipTableViewController.percentageHolder)")
+        
+       
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("Conrol came here")
+        if ( TipTableViewController.settingSave != nil ){
+            tipPercentage?.selectIndex = Int(TipTableViewController.settingSave!)
+        }
     }
     
     
@@ -111,7 +124,7 @@ extension TipTableViewController{
             
             self.tipPercentage = cell
             
-             cell.isHidden = true
+            cell.isHidden = true
             
             return cell
             
