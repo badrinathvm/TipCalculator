@@ -13,9 +13,17 @@ class TipAmountViewCell: UITableViewCell {
     
     @IBOutlet weak var tipAmountLabel: UILabel!
     
+    @IBOutlet var tipAmountTopConstraint: NSLayoutConstraint!
+    
     var tipAmount:Double!{
         didSet{
             tipAmountLabel.text = "\(tipAmount!)"
+        }
+    }
+    
+    var topValue: CGFloat!{
+        didSet{
+            tipAmountTopConstraint.constant = topValue!
         }
     }
     

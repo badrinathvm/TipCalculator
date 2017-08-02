@@ -19,10 +19,6 @@ class TipTableViewController: UITableViewController {
     var tipPercentage:TipPercentageViewCell?
     static var settingSave:String?
     
-
-    @IBOutlet weak var topLayout: NSLayoutConstraint!
-    
-    
     struct Storyboard{
         static let inputView = "InputViewCell"
         static let tipPercentage = "TipPercentageViewCell"
@@ -33,19 +29,14 @@ class TipTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        tableView.estimatedRowHeight = 70.0
+        tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
         
         tableView.tableFooterView = UIView()
         
-        print("Selected one is \(TipTableViewController.percentageHolder)")
-        
-       
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print("Conrol came here")
         if ( TipTableViewController.settingSave != nil ){
             tipPercentage?.selectIndex = Int(TipTableViewController.settingSave!)
         }
@@ -65,7 +56,7 @@ class TipTableViewController: UITableViewController {
             self.finalAmount?.isHidden = false
             
             //set back to original layout 
-            self.input?.topValue = 3.0
+            self.input?.topValue = -5.0
             
             if  (amount.characters.count > 0 ){
                 if (amount.contains(",")){
@@ -110,7 +101,7 @@ extension TipTableViewController{
             
             cell.inputTextField.addTarget(self, action:#selector(textFieldDidChange(textField:)), for: UIControlEvents.allEditingEvents)
             
-            cell.topValue = 40.0
+            cell.topValue = 50.0
             
             //required to access
             self.input = cell
@@ -123,7 +114,7 @@ extension TipTableViewController{
             let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.tipPercentage, for: indexPath) as! TipPercentageViewCell
             
             self.tipPercentage = cell
-            
+        
             cell.isHidden = true
             
             return cell

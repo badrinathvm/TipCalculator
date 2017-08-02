@@ -76,6 +76,7 @@
                                 <inset key="separatorInset" minX="12" minY="0.0" maxX="12" maxY="0.0"/>
                                 <connections>
                                     <outlet property="percentageSegmentControl" destination="ZAb-15-6pQ" id="HSy-Zo-jOT"/>
+                                    <outlet property="percentageTopConstraint" destination="noA-i6-aGp" id="5df-Wt-XVc"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TipAmountViewCell" rowHeight="75" id="w28-Rq-lgZ" customClass="TipAmountViewCell" customModule="TipCalculator" customModuleProvider="target">
@@ -113,6 +114,7 @@
                                 <inset key="separatorInset" minX="12" minY="0.0" maxX="12" maxY="0.0"/>
                                 <connections>
                                     <outlet property="tipAmountLabel" destination="QnA-5A-T0a" id="30e-9K-kCU"/>
+                                    <outlet property="tipAmountTopConstraint" destination="ZOj-2A-DYV" id="1Mt-Th-M1c"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FinalAmountViewCell" rowHeight="105" id="c0L-a6-2cn" customClass="FinalAmountViewCell" customModule="TipCalculator" customModuleProvider="target">
@@ -150,6 +152,7 @@
                                 <inset key="separatorInset" minX="12" minY="0.0" maxX="12" maxY="0.0"/>
                                 <connections>
                                     <outlet property="finalAmountLabel" destination="7Dw-lr-Lv5" id="Zn0-XD-f9c"/>
+                                    <outlet property="finalAmountTopConstraint" destination="Ukz-1w-j1J" id="S9V-f8-or6"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

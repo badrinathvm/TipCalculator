@@ -13,6 +13,7 @@ class TipPercentageViewCell: UITableViewCell {
    
     @IBOutlet weak var percentageSegmentControl: UISegmentedControl!
     
+    @IBOutlet var percentageTopConstraint: NSLayoutConstraint!
     
     @IBAction func percentageChnaged(_ sender: Any) {
         
@@ -35,6 +36,12 @@ class TipPercentageViewCell: UITableViewCell {
     var selectIndex:Int!{
         didSet{
             percentageSegmentControl.selectedSegmentIndex = selectIndex
+        }
+    }
+    
+    var topValue: CGFloat!{
+        didSet{
+            percentageTopConstraint.constant = topValue!
         }
     }
 
