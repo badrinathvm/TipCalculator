@@ -66,7 +66,7 @@ class TipTableViewController: UITableViewController {
                 }
                 
                 //Calculatin tip amount
-                let simplifiedTipAmount = (self.simplifiedAmount! * Double(10.0/100.0)).roundTo(places: 2)
+                let simplifiedTipAmount = (self.simplifiedAmount! * Double(TipTableViewController.percentageHolder/100.0)).roundTo(places: 2)
                 tip?.tipAmount = simplifiedTipAmount
                 
                 //Calculating final amount

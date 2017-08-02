@@ -34,6 +34,7 @@
                                             <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                         </textField>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.67417249780885558" green="0.82830920882820513" blue="0.64206793649133154" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="mJh-pT-0vH" secondAttribute="trailing" constant="12" id="4sW-PB-Gsz"/>
                                         <constraint firstItem="mJh-pT-0vH" firstAttribute="leading" secondItem="Rob-Z1-9YI" secondAttribute="leadingMargin" constant="24" id="5Nq-hP-KgU"/>
@@ -55,16 +56,19 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ZAb-15-6pQ">
+                                            <color key="backgroundColor" red="0.67417249779999999" green="0.82830920880000003" blue="0.64206793650000005" alpha="1" colorSpace="calibratedRGB"/>
                                             <segments>
                                                 <segment title="10%"/>
                                                 <segment title="15%"/>
                                                 <segment title="20%"/>
                                             </segments>
+                                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
                                                 <action selector="percentageChnaged:" destination="CHc-4R-Tbg" eventType="valueChanged" id="bMp-t2-tYQ"/>
                                             </connections>
                                         </segmentedControl>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.67417249779999999" green="0.82830920880000003" blue="0.64206793650000005" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstItem="ZAb-15-6pQ" firstAttribute="leading" secondItem="MTd-cj-3Qc" secondAttribute="leading" constant="24" id="HXg-sM-KcK"/>
                                         <constraint firstItem="ZAb-15-6pQ" firstAttribute="centerX" secondItem="MTd-cj-3Qc" secondAttribute="centerX" id="QWA-ca-vbt"/>
@@ -104,6 +108,7 @@
                                             </subviews>
                                         </stackView>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.49527285888355566" green="0.7631202874662113" blue="0.82830920882820513" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstItem="8T4-q1-zPU" firstAttribute="top" secondItem="gcE-ME-0T1" secondAttribute="top" constant="12" id="ZOj-2A-DYV"/>
                                         <constraint firstAttribute="bottom" secondItem="8T4-q1-zPU" secondAttribute="bottom" constant="12" id="bCO-7D-N1W"/>
@@ -142,6 +147,7 @@
                                             </subviews>
                                         </stackView>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.4952728589" green="0.76312028750000005" blue="0.82830920880000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstItem="ZlK-jd-WM2" firstAttribute="leading" secondItem="bBe-5d-YUF" secondAttribute="leading" constant="24" id="QBi-Au-2AG"/>
                                         <constraint firstItem="ZlK-jd-WM2" firstAttribute="top" secondItem="bBe-5d-YUF" secondAttribute="top" constant="12" id="Ukz-1w-j1J"/>
@@ -198,6 +204,7 @@
                                     <segment title="15%"/>
                                     <segment title="20%"/>
                                 </segments>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="segmentChange:" destination="NrN-b7-8kV" eventType="valueChanged" id="X2r-9B-5h2"/>
                                 </connections>
