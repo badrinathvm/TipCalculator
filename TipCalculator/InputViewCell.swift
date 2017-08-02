@@ -11,4 +11,7 @@ import UIKit
 class InputViewCell: UITableViewCell {
 
    
+    @IBOutlet weak var inputTextField: UITextField!
+    
+    
 }

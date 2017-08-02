@@ -31,7 +31,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="104.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="662" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mJh-pT-0vH">
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mJh-pT-0vH">
                                             <rect key="frame" x="32" y="20" width="323" height="64.5"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="45"/>
@@ -46,6 +46,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="12" minY="0.0" maxX="12" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="inputTextField" destination="mJh-pT-0vH" id="3Y9-rF-HbN"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TipPercentageViewCell" rowHeight="75" id="CHc-4R-Tbg" customClass="TipPercentageViewCell" customModule="TipCalculator" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="133" width="375" height="75"/>
@@ -72,6 +75,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="12" minY="0.0" maxX="12" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="percentageSegmentControl" destination="ZAb-15-6pQ" id="HSy-Zo-jOT"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TipAmountViewCell" rowHeight="75" id="w28-Rq-lgZ" customClass="TipAmountViewCell" customModule="TipCalculator" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="208" width="375" height="75"/>
@@ -106,6 +112,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="12" minY="0.0" maxX="12" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="tipAmountLabel" destination="QnA-5A-T0a" id="30e-9K-kCU"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FinalAmountViewCell" rowHeight="105" id="c0L-a6-2cn" customClass="FinalAmountViewCell" customModule="TipCalculator" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="283" width="375" height="105"/>
@@ -143,6 +152,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="12" minY="0.0" maxX="12" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="finalAmountLabel" destination="7Dw-lr-Lv5" id="Zn0-XD-f9c"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -150,7 +162,9 @@
                             <outlet property="delegate" destination="BG1-fC-i1r" id="Bem-XD-S9t"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Tip Calculator" id="guT-Si-MVY"/>
+                    <navigationItem key="navigationItem" title="Tip Calculator" id="guT-Si-MVY">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="o66-hF-lyc"/>
+                    </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="900"/>
                 </tableViewController>

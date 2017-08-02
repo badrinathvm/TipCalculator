@@ -11,5 +11,8 @@ import UIKit
 class TipPercentageViewCell: UITableViewCell {
 
    
+    @IBOutlet weak var percentageSegmentControl: UISegmentedControl!
+    
+    
 
 }
