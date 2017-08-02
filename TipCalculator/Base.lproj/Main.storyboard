@@ -35,7 +35,7 @@
                                             <rect key="frame" x="32" y="20" width="323" height="64.5"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="45"/>
-                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                         </textField>
                                     </subviews>
                                     <constraints>
@@ -64,6 +64,9 @@
                                                 <segment title="15%"/>
                                                 <segment title="20%"/>
                                             </segments>
+                                            <connections>
+                                                <action selector="percentageChnaged:" destination="CHc-4R-Tbg" eventType="valueChanged" id="bMp-t2-tYQ"/>
+                                            </connections>
                                         </segmentedControl>
                                     </subviews>
                                     <constraints>

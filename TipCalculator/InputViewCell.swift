@@ -13,5 +13,11 @@ class InputViewCell: UITableViewCell {
    
     @IBOutlet weak var inputTextField: UITextField!
     
+    var updateTextValue:String!{
+        didSet{
+            inputTextField.text = updateTextValue
+        }
+    }
+    
     
 }
