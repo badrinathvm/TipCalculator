@@ -16,6 +16,7 @@
 		0577CB461F312DC30072BEE2 /* TipPercentageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0577CB451F312DC30072BEE2 /* TipPercentageViewCell.swift */; };
 		0577CB481F3132560072BEE2 /* TipAmountViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0577CB471F3132560072BEE2 /* TipAmountViewCell.swift */; };
 		0577CB4A1F3132650072BEE2 /* FinalAmountViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0577CB491F3132650072BEE2 /* FinalAmountViewCell.swift */; };
+		0577CB4C1F31A4590072BEE2 /* HelperExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0577CB4B1F31A4590072BEE2 /* HelperExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		0577CB451F312DC30072BEE2 /* TipPercentageViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipPercentageViewCell.swift; sourceTree = "<group>"; };
 		0577CB471F3132560072BEE2 /* TipAmountViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipAmountViewCell.swift; sourceTree = "<group>"; };
 		0577CB491F3132650072BEE2 /* FinalAmountViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalAmountViewCell.swift; sourceTree = "<group>"; };
+		0577CB4B1F31A4590072BEE2 /* HelperExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +68,9 @@
 				0577CB311F30E55F0072BEE2 /* Storyboard */,
 				0577CB231F3065C40072BEE2 /* Assets.xcassets */,
 				0577CB281F3065C40072BEE2 /* Info.plist */,
-				0577CB341F30E7FB0072BEE2 /* View */,
 				0577CB301F30E5410072BEE2 /* Controllers */,
+				0577CB341F30E7FB0072BEE2 /* View */,
+				0577CB4D1F31A46C0072BEE2 /* Utils */,
 			);
 			path = TipCalculator;
 			sourceTree = "<group>";
@@ -98,6 +101,14 @@
 				0577CB491F3132650072BEE2 /* FinalAmountViewCell.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		0577CB4D1F31A46C0072BEE2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0577CB4B1F31A4590072BEE2 /* HelperExtensions.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0577CB4C1F31A4590072BEE2 /* HelperExtensions.swift in Sources */,
 				0577CB461F312DC30072BEE2 /* TipPercentageViewCell.swift in Sources */,
 				0577CB421F311D400072BEE2 /* InputViewCell.swift in Sources */,
 				0577CB481F3132560072BEE2 /* TipAmountViewCell.swift in Sources */,

@@ -13,4 +13,10 @@ class TipAmountViewCell: UITableViewCell {
     
     @IBOutlet weak var tipAmountLabel: UILabel!
     
+    var tipAmount:Double!{
+        didSet{
+            tipAmountLabel.text = "\(tipAmount!)"
+        }
+    }
+    
 }

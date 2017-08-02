@@ -11,8 +11,10 @@ import UIKit
 class TipTableViewController: UITableViewController {
     
     //placeholder for percentage
-    static var percentageHolder:Double?
+    static var percentageHolder:Double = 10.0
     var input:InputViewCell?
+    var tip:TipAmountViewCell?
+    var simplifiedAmount:Double?
     
     struct Storyboard{
         static let inputView = "InputViewCell"
@@ -36,7 +38,18 @@ class TipTableViewController: UITableViewController {
         if let amount = textField.text?.formatCurrency() {
             print("Amount is \((amount))")
             input?.updateTextValue = amount
+            
+            if  (amount.characters.count > 0 ){
+                if (amount.contains(",")){
+                    let tempString:String =  amount.replacingOccurrences(of: ",", with: "")
+                    self.simplifiedAmount = Double(tempString.substring(from: 1))!
+                }else{
+                    self.simplifiedAmount = Double(amount.substring(from: 1))!
+                }
+                tip?.tipAmount = (self.simplifiedAmount! * Double(10.0/100.0)).roundTo(places: 2)
+            }
         }
+        
     }
 
 }
@@ -80,6 +93,8 @@ extension TipTableViewController{
             let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.tipAmount, for: indexPath) as! TipAmountViewCell
             
             cell.separatorInset = UIEdgeInsetsMake(0.0 , cell.bounds.size.width , 0.0, -cell.bounds.size.width)
+            
+            tip = cell
         
             return cell
             
@@ -103,47 +118,5 @@ extension TipTableViewController{
 
 }
 
-
-
-extension String {
-    
-    struct NumberFormatters {
-        static let instance = NumberFormatter()
-    }
-    
-    var doubleValue:Double? {
-        return NumberFormatters.instance.number(from: self)?.doubleValue
-    }
-    
-    var integerValue:Int? {
-        return NumberFormatters.instance.number(from: self)?.intValue
-    }
-    
-    func formatCurrency() -> String {
-        
-        var number: NSNumber!
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currencyAccounting
-        formatter.currencySymbol = "$"
-        formatter.maximumFractionDigits = 2
-        formatter.minimumFractionDigits = 2
-        
-        var amountWithPrefix = self
-        
-        // remove from String: "$", ".", ","
-        let regex = try! NSRegularExpression(pattern: "[^0-9]", options: .caseInsensitive)
-        amountWithPrefix = regex.stringByReplacingMatches(in: amountWithPrefix, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.characters.count), withTemplate: "")
-        
-        let double = (amountWithPrefix as NSString).doubleValue
-        number = NSNumber(value: (double / 100))
-        
-        // if first number is 0 or all numbers were deleted
-        guard number != 0 as NSNumber else {
-            return ""
-        }
-        
-        return formatter.string(from: number)!
-    }
-}
 
 
