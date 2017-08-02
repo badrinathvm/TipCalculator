@@ -15,6 +15,8 @@ class TipTableViewController: UITableViewController {
     var input:InputViewCell?
     var tip:TipAmountViewCell?
     var simplifiedAmount:Double?
+    var finalAmount:FinalAmountViewCell?
+    var tipPercentage:TipPercentageViewCell?
     
     struct Storyboard{
         static let inputView = "InputViewCell"
@@ -35,18 +37,29 @@ class TipTableViewController: UITableViewController {
     
     func textFieldDidChange(textField: UITextField){
         
-        if let amount = textField.text?.formatCurrency() {
+        if var amount = textField.text?.formatCurrency() {
             print("Amount is \((amount))")
+            amount = amount.replacingOccurrences(of: ",", with: "")
             input?.updateTextValue = amount
+            
+            //set back row height 
+            self.tip?.isHidden = false
+            self.tipPercentage?.isHidden = false
+            self.finalAmount?.isHidden = false
             
             if  (amount.characters.count > 0 ){
                 if (amount.contains(",")){
-                    let tempString:String =  amount.replacingOccurrences(of: ",", with: "")
-                    self.simplifiedAmount = Double(tempString.substring(from: 1))!
+                    self.simplifiedAmount = Double(amount.substring(from: 1))!
                 }else{
                     self.simplifiedAmount = Double(amount.substring(from: 1))!
                 }
-                tip?.tipAmount = (self.simplifiedAmount! * Double(10.0/100.0)).roundTo(places: 2)
+                
+                //Calculatin tip amount
+                let simplifiedTipAmount = (self.simplifiedAmount! * Double(10.0/100.0)).roundTo(places: 2)
+                tip?.tipAmount = simplifiedTipAmount
+                
+                //Calculating final amount
+               finalAmount?.finalResult = (self.simplifiedAmount! + simplifiedTipAmount).roundTo(places:2)
             }
         }
         
@@ -78,13 +91,17 @@ extension TipTableViewController{
             cell.inputTextField.addTarget(self, action:#selector(textFieldDidChange(textField:)), for: UIControlEvents.allEditingEvents)
             
             //required to access
-            input = cell
+            self.input = cell
         
             return cell
             
         } else if (indexPath.row == 1){
             
             let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.tipPercentage, for: indexPath) as! TipPercentageViewCell
+            
+            self.tipPercentage = cell
+            
+             cell.isHidden = true
             
             return cell
             
@@ -94,13 +111,19 @@ extension TipTableViewController{
             
             cell.separatorInset = UIEdgeInsetsMake(0.0 , cell.bounds.size.width , 0.0, -cell.bounds.size.width)
             
-            tip = cell
+            self.tip = cell
+            
+            cell.isHidden = true
         
             return cell
             
         }else if (indexPath.row == 3){
             
             let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.finalAmount, for: indexPath) as! FinalAmountViewCell
+            
+            self.finalAmount = cell
+            
+             cell.isHidden = true
             
             return cell
         }
@@ -111,10 +134,27 @@ extension TipTableViewController{
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (indexPath.row == 0){
-            //print("Data upadted is ")
+        
         }
         
     }
+    
+   /* override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        var rowHeight:CGFloat = 0.0
+        
+         if (indexPath.row == 1){
+            //rowHeight = 0.0
+         }else if (indexPath.row == 2){
+             //rowHeight = 0.0
+        }else if (indexPath.row == 3 ){
+            //rowHeight = 0.0
+        }else{
+            //return 330.0
+        }
+        
+        return rowHeight
+    }*/
 
 }
 

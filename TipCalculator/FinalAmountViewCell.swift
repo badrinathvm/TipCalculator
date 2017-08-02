@@ -12,4 +12,10 @@ class FinalAmountViewCell: UITableViewCell {
 
     @IBOutlet weak var finalAmountLabel: UILabel!
     
+    var finalResult:Double!{
+        didSet{
+            finalAmountLabel.text = "$\(finalResult!)"
+        }
+    }
+    
 }
