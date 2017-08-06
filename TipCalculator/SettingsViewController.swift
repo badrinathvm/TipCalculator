@@ -16,20 +16,11 @@ class SettingsViewController: UIViewController {
         
         switch segmentControl.selectedSegmentIndex{
             
-        case 0: print ("10%")
-        
-        TipTableViewController.percentageHolder = 10.0
-        TipTableViewController.settingSave = "0"
+        case 0: self.savePercentage(percentageIndex: "0")
             
-        case 1: print ("15%")
-        
-        TipTableViewController.percentageHolder = 15.0
-        TipTableViewController.settingSave = "1"
+        case 1: self.savePercentage(percentageIndex: "1")
 
-        case 2: print ("20%")
-        
-        TipTableViewController.percentageHolder = 20.0
-        TipTableViewController.settingSave = "2"
+        case 2: self.savePercentage(percentageIndex: "2")
 
         default : break
             
@@ -47,6 +38,12 @@ class SettingsViewController: UIViewController {
     
     func back(){
         self.navigationController?.popViewController(animated: false)
+    }
+    
+    func savePercentage(percentageIndex:String){
+        let defaults = UserDefaults.standard
+        defaults.set(percentageIndex, forKey: "percentageIndex")
+        defaults.synchronize()
     }
 
 }

@@ -37,8 +37,9 @@ class TipTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if ( TipTableViewController.settingSave != nil ){
-            tipPercentage?.selectIndex = Int(TipTableViewController.settingSave!)
+        let defaults = UserDefaults.standard
+        if let percentageIndex = defaults.object(forKey: "percentageIndex") as? String {
+             tipPercentage?.selectIndex = Int(percentageIndex)
         }
     }
     
@@ -103,7 +104,7 @@ extension TipTableViewController{
             
             cell.topValue = 50.0
             
-            //required to access
+            //required to access input cell
             self.input = cell
             
         
@@ -152,23 +153,6 @@ extension TipTableViewController{
         }
         
     }
-    
-   /* override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        var rowHeight:CGFloat = 0.0
-        
-         if (indexPath.row == 1){
-            //rowHeight = 0.0
-         }else if (indexPath.row == 2){
-             //rowHeight = 0.0
-        }else if (indexPath.row == 3 ){
-            //rowHeight = 0.0
-        }else{
-            //return 330.0
-        }
-        
-        return rowHeight
-    }*/
 
 }
 
