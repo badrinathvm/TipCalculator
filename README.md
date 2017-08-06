@@ -23,4 +23,4 @@ The following **additional** features are implemented:
 
 - [ ] List anything else that you can get done to improve the app functionality!
 
-<img src='https://media.giphy.com/media/3oEhmSPRccTKCdanAI/giphy.gif' title='Video Walkthrough of Tip Calculator' width='' alt='Video Walkthrough of Tip Calculator' />
+<img src='https://media.giphy.com/media/26n6FMW8daUBVzmQU/giphy.gif' title='Video Walkthrough of Tip Calculator' width='' alt='Video Walkthrough of Tip Calculator' />
