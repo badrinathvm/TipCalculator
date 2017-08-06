@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xnV-gj-4AC">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xnV-gj-4AC">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,13 +25,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="InputViewCell" rowHeight="105" id="llB-m3-q6d" customClass="InputViewCell" customModule="TipCalculator" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="375" height="105"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="105"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="llB-m3-q6d" id="Rob-Z1-9YI">
-                                    <frame key="frameInset" width="375" height="104.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="104.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mJh-pT-0vH">
+                                            <rect key="frame" x="32" y="20" width="323" height="64.5"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="45"/>
                                             <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
@@ -49,13 +53,14 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TipPercentageViewCell" rowHeight="75" id="CHc-4R-Tbg" customClass="TipPercentageViewCell" customModule="TipCalculator" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="197" width="375" height="75"/>
+                                <rect key="frame" x="0.0" y="133" width="375" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CHc-4R-Tbg" id="MTd-cj-3Qc">
-                                    <frame key="frameInset" width="375" height="74.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ZAb-15-6pQ">
+                                            <rect key="frame" x="24" y="24" width="327" height="27.5"/>
                                             <color key="backgroundColor" red="0.67417249779999999" green="0.82830920880000003" blue="0.64206793650000005" alpha="1" colorSpace="calibratedRGB"/>
                                             <segments>
                                                 <segment title="10%"/>
@@ -63,9 +68,6 @@
                                                 <segment title="20%"/>
                                             </segments>
                                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                            <connections>
-                                                <action selector="percentageChnaged:" destination="CHc-4R-Tbg" eventType="valueChanged" id="bMp-t2-tYQ"/>
-                                            </connections>
                                         </segmentedControl>
                                     </subviews>
                                     <color key="backgroundColor" red="0.67417249779999999" green="0.82830920880000003" blue="0.64206793650000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -84,20 +86,23 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TipAmountViewCell" rowHeight="75" id="w28-Rq-lgZ" customClass="TipAmountViewCell" customModule="TipCalculator" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="272" width="375" height="75"/>
+                                <rect key="frame" x="0.0" y="208" width="375" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w28-Rq-lgZ" id="gcE-ME-0T1">
-                                    <frame key="frameInset" width="375" height="74.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="8T4-q1-zPU">
+                                            <rect key="frame" x="24" y="12" width="327" height="50.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKF-gp-eXY">
+                                                    <rect key="frame" x="0.0" y="0.0" width="72" height="50.5"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="$" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QnA-5A-T0a">
+                                                    <rect key="frame" x="87" y="0.0" width="240" height="50.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="240" id="NA3-00-hnZ"/>
                                                     </constraints>
@@ -123,20 +128,23 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FinalAmountViewCell" rowHeight="105" id="c0L-a6-2cn" customClass="FinalAmountViewCell" customModule="TipCalculator" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="347" width="375" height="105"/>
+                                <rect key="frame" x="0.0" y="283" width="375" height="105"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="c0L-a6-2cn" id="bBe-5d-YUF">
-                                    <frame key="frameInset" width="375" height="104.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="104.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ZlK-jd-WM2">
+                                            <rect key="frame" x="24" y="12" width="327" height="80.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zk1-xq-5xB">
+                                                    <rect key="frame" x="0.0" y="0.0" width="27" height="80.5"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="40"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Dw-lr-Lv5">
+                                                    <rect key="frame" x="87" y="0.0" width="240" height="80.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="240" id="dQ3-0p-hfb"/>
                                                     </constraints>
@@ -194,11 +202,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default Tip Amount:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLy-Ah-JgN">
+                                <rect key="frame" x="12" y="104" width="351" height="27.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jD3-hA-a2X">
+                                <rect key="frame" x="12" y="161.5" width="351" height="29"/>
                                 <segments>
                                     <segment title="10%"/>
                                     <segment title="15%"/>
