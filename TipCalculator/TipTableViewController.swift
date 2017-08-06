@@ -39,9 +39,16 @@ class TipTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         let defaults = UserDefaults.standard
+        
         if let percentageIndex = defaults.object(forKey: "percentageIndex") as? String {
              tipPercentage?.selectIndex = Int(percentageIndex)
+            print(percentageIndex)
+            
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.tipChange()
     }
     
     
@@ -67,7 +74,6 @@ class TipTableViewController: UITableViewController {
                     self.simplifiedAmount = Double(amount.substring(from: 1))!
                 }
                 
-                
                 //Calculatin tip amount
                 let simplifiedTipAmount = (self.simplifiedAmount! * Double(TipTableViewController.percentageHolder/100.0)).roundTo(places: 2)
                 tip?.tipAmount = simplifiedTipAmount
@@ -87,41 +93,53 @@ class TipTableViewController: UITableViewController {
         
         var value:Double?
         
-        switch (tipPercentage?.percentageSegmentControl.selectedSegmentIndex)!{
+        if( tipPercentage != nil){
             
-        case 0: value = 10.0
+            switch (tipPercentage?.percentageSegmentControl.selectedSegmentIndex)!{
+                
+            case 0: value = 10.0
+                
+            case 1: value = 15.0
+                
+            case 2: value = 20.0
+                
+            default : break
+                
+            }
             
-        case 1: value = 15.0
-
-        case 2: value = 20.0
+            //set back row height
+            self.tip?.isHidden = false
+            self.tipPercentage?.isHidden = false
+            self.finalAmount?.isHidden = false
             
-        default : break
+            let defaults = UserDefaults.standard
+            
+            if let amount = defaults.object(forKey: "textFieldAmount") as? Double {
+                
+                print(amount)
+                
+                let simplifiedTipAmount = (amount * Double(value!/100.0)).roundTo(places: 2)
+                
+                self.tip?.tipAmount = simplifiedTipAmount
+                
+                print(self.tip?.tipAmount)
+                
+                //Calculating final amount
+                self.finalAmount?.finalResult = (amount + simplifiedTipAmount).roundTo(places:2)
+                
+            }
             
         }
-        
-        //set back row height
-        self.tip?.isHidden = false
-        self.tipPercentage?.isHidden = false
-        self.finalAmount?.isHidden = false
-        
+    }
+    
+    
+    func saveFormattedAmount(finalAmount:Double){
         let defaults = UserDefaults.standard
-        
-        if let amount = defaults.object(forKey: "textFieldAmount") as? Double {
-            
-            print(amount)
-            
-            let simplifiedTipAmount = (amount * Double(value!/100.0)).roundTo(places: 2)
-            
-            self.tip?.tipAmount = simplifiedTipAmount
-            
-            //Calculating final amount
-            self.finalAmount?.finalResult = (amount + simplifiedTipAmount).roundTo(places:2)
-    
-        }
-    
-        
+        defaults.set(finalAmount, forKey: "textFieldAmount")
+        defaults.synchronize()
     }
 
+    
 }
 
 
@@ -193,12 +211,6 @@ extension TipTableViewController{
 
     }
     
-    func saveFormattedAmount(finalAmount:Double){
-        let defaults = UserDefaults.standard
-        defaults.set(finalAmount, forKey: "textFieldAmount")
-        defaults.synchronize()
-    }
-
 }
 
 
