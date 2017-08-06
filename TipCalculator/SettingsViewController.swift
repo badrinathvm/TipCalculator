@@ -31,7 +31,7 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         
         let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(SettingsViewController.back))
-        
+        TipTableViewController.backFlag = true
         self.navigationItem.leftBarButtonItem = newBackButton
 
     }

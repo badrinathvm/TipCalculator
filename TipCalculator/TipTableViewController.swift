@@ -17,8 +17,7 @@ class TipTableViewController: UITableViewController {
     var simplifiedAmount:Double?
     var finalAmount:FinalAmountViewCell?
     var tipPercentage:TipPercentageViewCell?
-    static var settingSave:String?
-    var referenceAmount:Double?
+    static var backFlag:Bool = false
     
     struct Storyboard{
         static let inputView = "InputViewCell"
@@ -48,7 +47,10 @@ class TipTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.tipChange()
+        if(TipTableViewController.backFlag){
+            self.tipChange()
+        }
+     
     }
     
     
@@ -59,15 +61,17 @@ class TipTableViewController: UITableViewController {
             amount = amount.replacingOccurrences(of: ",", with: "")
             input?.updateTextValue = amount
             
-            //set back row height 
-            self.tip?.isHidden = false
-            self.tipPercentage?.isHidden = false
-            self.finalAmount?.isHidden = false
-            
-            //set back to original layout 
-            self.input?.topValue = -5.0
-            
+        
             if  (amount.characters.count > 0 ){
+                
+                //set back to original layout
+                self.input?.topValue = -5.0
+                
+                //set back row height
+                self.tip?.isHidden = false
+                self.tipPercentage?.isHidden = false
+                self.finalAmount?.isHidden = false
+                
                 if (amount.contains(",")){
                     self.simplifiedAmount = Double(amount.substring(from: 1))!
                 }else{
@@ -116,13 +120,13 @@ class TipTableViewController: UITableViewController {
             
             if let amount = defaults.object(forKey: "textFieldAmount") as? Double {
                 
-                print(amount)
+                //print(amount)
                 
                 let simplifiedTipAmount = (amount * Double(value!/100.0)).roundTo(places: 2)
                 
                 self.tip?.tipAmount = simplifiedTipAmount
                 
-                print(self.tip?.tipAmount)
+                //print(self.tip?.tipAmount)
                 
                 //Calculating final amount
                 self.finalAmount?.finalResult = (amount + simplifiedTipAmount).roundTo(places:2)
@@ -163,9 +167,12 @@ extension TipTableViewController{
             
             cell.separatorInset = UIEdgeInsetsMake(0.0 , cell.bounds.size.width , 0.0, -cell.bounds.size.width)
             
+
             cell.inputTextField.addTarget(self, action:#selector(textFieldDidChange(textField:)), for: UIControlEvents.allEditingEvents)
             
             cell.topValue = 50.0
+            
+            cell.inputTextField.becomeFirstResponder()
             
             //required to access input cell
             self.input = cell
