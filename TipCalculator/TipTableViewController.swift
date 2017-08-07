@@ -32,6 +32,8 @@ class TipTableViewController: UITableViewController {
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
         
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        
         tableView.tableFooterView = UIView()
         
     }

@@ -27,6 +27,18 @@ class SettingsViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var switchControl: UISwitch!
+    
+    @IBAction func darkThemeEnabled(_ sender: Any) {
+        if switchControl.isOn {
+            print("Switch is on")
+        } else {
+            print("Switch is off")
+        }
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
