@@ -22,6 +22,7 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 - [ ] List anything else that you can get done to improve the app functionality!
+- [x] Add a light/dark color theme to the settings view. In viewWillAppear, update views with the correct theme colors.
 
 <img src='https://media.giphy.com/media/l1J3RYnqviK4Vt7y0/giphy.gif' title='Video Walkthrough of Tip Calculator' width='' alt='Video Walkthrough of Tip Calculator With Theme' />
 
