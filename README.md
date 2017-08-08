@@ -18,11 +18,12 @@ The following **optional** features are implemented:
 * [ ] Remembering the bill amount across app restarts (if <10mins)
 * [X] Using locale-specific currency and currency thousands separators.
 * [X] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
+* [x] Add a light/dark color theme to the settings view. In viewWillAppear, update views with the correct theme colors.
 
 The following **additional** features are implemented:
 
 - [ ] List anything else that you can get done to improve the app functionality!
-- [x] Add a light/dark color theme to the settings view. In viewWillAppear, update views with the correct theme colors.
+
 
 <img src='https://media.giphy.com/media/l1J3RYnqviK4Vt7y0/giphy.gif' title='Video Walkthrough of Tip Calculator' width='' alt='Video Walkthrough of Tip Calculator With Theme' />
 
