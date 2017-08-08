@@ -14,6 +14,10 @@ class FinalAmountViewCell: UITableViewCell {
     
     @IBOutlet var finalAmountTopConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var finalAmountContentView: UIView!
+    
+    @IBOutlet weak var equalsLabel: UILabel!
+    
     var finalResult:Double!{
         didSet{
             finalAmountLabel.text = "$\(finalResult!)"

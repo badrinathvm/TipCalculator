@@ -12,6 +12,8 @@ class InputViewCell: UITableViewCell {
 
     @IBOutlet weak var topLayout: NSLayoutConstraint!
    
+    @IBOutlet weak var inputTextContentView: UIView!
+    
     @IBOutlet weak var inputTextField: UITextField!
     
     var updateTextValue:String!{

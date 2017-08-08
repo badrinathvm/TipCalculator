@@ -16,6 +16,8 @@ class TipPercentageViewCell: UITableViewCell {
     
     @IBOutlet var percentageTopConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var tipPercentageContentView: UIView!
+    
     var selectIndex:Int!{
         didSet{
             percentageSegmentControl.selectedSegmentIndex = selectIndex

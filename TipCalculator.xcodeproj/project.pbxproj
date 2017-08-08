@@ -17,6 +17,7 @@
 		0577CB481F3132560072BEE2 /* TipAmountViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0577CB471F3132560072BEE2 /* TipAmountViewCell.swift */; };
 		0577CB4A1F3132650072BEE2 /* FinalAmountViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0577CB491F3132650072BEE2 /* FinalAmountViewCell.swift */; };
 		0577CB4C1F31A4590072BEE2 /* HelperExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0577CB4B1F31A4590072BEE2 /* HelperExtensions.swift */; };
+		05E245A41F397AB600148A5A /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E245A31F397AB600148A5A /* Styles.swift */; };
 		E5FE34EB1F326C8E00C20A22 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FE34EA1F326C8E00C20A22 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		0577CB471F3132560072BEE2 /* TipAmountViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipAmountViewCell.swift; sourceTree = "<group>"; };
 		0577CB491F3132650072BEE2 /* FinalAmountViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalAmountViewCell.swift; sourceTree = "<group>"; };
 		0577CB4B1F31A4590072BEE2 /* HelperExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperExtensions.swift; sourceTree = "<group>"; };
+		05E245A31F397AB600148A5A /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		E5FE34EA1F326C8E00C20A22 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				0577CB4B1F31A4590072BEE2 /* HelperExtensions.swift */,
+				05E245A31F397AB600148A5A /* Styles.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05E245A41F397AB600148A5A /* Styles.swift in Sources */,
 				0577CB4C1F31A4590072BEE2 /* HelperExtensions.swift in Sources */,
 				0577CB461F312DC30072BEE2 /* TipPercentageViewCell.swift in Sources */,
 				0577CB421F311D400072BEE2 /* InputViewCell.swift in Sources */,

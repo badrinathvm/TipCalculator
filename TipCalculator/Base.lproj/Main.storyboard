@@ -48,6 +48,7 @@
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
+                                    <outlet property="inputTextContentView" destination="Rob-Z1-9YI" id="5kP-HS-tOg"/>
                                     <outlet property="inputTextField" destination="mJh-pT-0vH" id="3Y9-rF-HbN"/>
                                     <outlet property="topLayout" destination="uPu-gy-HmU" id="EMB-ip-1yc"/>
                                 </connections>
@@ -83,6 +84,7 @@
                                 <connections>
                                     <outlet property="percentageSegmentControl" destination="ZAb-15-6pQ" id="HSy-Zo-jOT"/>
                                     <outlet property="percentageTopConstraint" destination="noA-i6-aGp" id="5df-Wt-XVc"/>
+                                    <outlet property="tipPercentageContentView" destination="MTd-cj-3Qc" id="XKc-pB-Jrx"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TipAmountViewCell" rowHeight="75" id="w28-Rq-lgZ" customClass="TipAmountViewCell" customModule="TipCalculator" customModuleProvider="target">
@@ -111,7 +113,6 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.76082702067793995" green="0.53413477695275424" blue="0.61889492564811333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </stackView>
                                     </subviews>
                                     <color key="backgroundColor" red="0.17316771402923242" green="0.58227148396372463" blue="0.60047442477846902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -124,6 +125,8 @@
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="12" minY="0.0" maxX="12" maxY="0.0"/>
                                 <connections>
+                                    <outlet property="plusLabel" destination="JKF-gp-eXY" id="63P-9R-Cfo"/>
+                                    <outlet property="tipAmountContentView" destination="gcE-ME-0T1" id="xlE-4L-O8b"/>
                                     <outlet property="tipAmountLabel" destination="QnA-5A-T0a" id="30e-9K-kCU"/>
                                     <outlet property="tipAmountTopConstraint" destination="ZOj-2A-DYV" id="1Mt-Th-M1c"/>
                                 </connections>
@@ -166,6 +169,8 @@
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="12" minY="0.0" maxX="12" maxY="0.0"/>
                                 <connections>
+                                    <outlet property="equalsLabel" destination="Zk1-xq-5xB" id="zcl-5n-CN3"/>
+                                    <outlet property="finalAmountContentView" destination="bBe-5d-YUF" id="Liq-bI-W9t"/>
                                     <outlet property="finalAmountLabel" destination="7Dw-lr-Lv5" id="Zn0-XD-f9c"/>
                                     <outlet property="finalAmountTopConstraint" destination="Ukz-1w-j1J" id="S9V-f8-or6"/>
                                 </connections>
@@ -229,8 +234,9 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sGU-96-tXR">
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sGU-96-tXR">
                                         <rect key="frame" x="292" y="0.0" width="51" height="31"/>
+                                        <color key="onTintColor" red="0.67417249779999999" green="0.82830920880000003" blue="0.64206793650000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="darkThemeEnabled:" destination="NrN-b7-8kV" eventType="valueChanged" id="wjL-HN-e7b"/>
                                         </connections>
@@ -255,8 +261,11 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="darkThemeLabel" destination="r1t-zV-kGS" id="OBN-7P-lpm"/>
+                        <outlet property="defaultTipAmountLabel" destination="YLy-Ah-JgN" id="lSx-Xh-lYf"/>
                         <outlet property="segmentControl" destination="jD3-hA-a2X" id="SHU-8F-a0x"/>
                         <outlet property="switchControl" destination="sGU-96-tXR" id="oqI-UA-YZF"/>
+                        <outlet property="viewForTheme" destination="grw-cr-ThH" id="dgN-RJ-4aX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kfc-Q2-aBT" userLabel="First Responder" sceneMemberID="firstResponder"/>

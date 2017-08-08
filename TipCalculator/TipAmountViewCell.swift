@@ -10,10 +10,13 @@ import UIKit
 
 class TipAmountViewCell: UITableViewCell {
 
+    @IBOutlet weak var tipAmountContentView: UIView!
     
     @IBOutlet weak var tipAmountLabel: UILabel!
     
     @IBOutlet var tipAmountTopConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var plusLabel: UILabel!
     
     var tipAmount:Double!{
         didSet{

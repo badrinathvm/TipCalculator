@@ -19,6 +19,15 @@ class TipTableViewController: UITableViewController {
     var tipPercentage:TipPercentageViewCell?
     static var backFlag:Bool = false
     
+    //Fields for color Changes
+    
+    
+    
+    
+    
+    
+    
+    
     struct Storyboard{
         static let inputView = "InputViewCell"
         static let tipPercentage = "TipPercentageViewCell"
@@ -28,10 +37,8 @@ class TipTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
-        
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         
         tableView.tableFooterView = UIView()
@@ -44,9 +51,12 @@ class TipTableViewController: UITableViewController {
         if let percentageIndex = defaults.object(forKey: "percentageIndex") as? String {
              tipPercentage?.selectIndex = Int(percentageIndex)
             print(percentageIndex)
-            
         }
+        
+        self.checkThemeState()
+        
     }
+
     
     override func viewDidAppear(_ animated: Bool) {
         if(TipTableViewController.backFlag){
@@ -54,6 +64,59 @@ class TipTableViewController: UITableViewController {
         }
      
     }
+    
+    func checkThemeState(){
+        
+        let defaults = UserDefaults.standard
+        if let stateChange = defaults.object(forKey: "state") as? String {
+            if (stateChange == "dark"){
+                self.darkTheme()
+            }else if (stateChange == "light"){
+                self.lightTheme()
+            }
+        }
+
+    }
+    
+    func darkTheme(){
+        input?.inputTextContentView.backgroundColor = UIColor.black
+        input?.inputTextField.textColor = UIColor.white
+        
+        tipPercentage?.tipPercentageContentView.backgroundColor = UIColor.black
+        tipPercentage?.tintColor = UIColor.white
+        tipPercentage?.percentageSegmentControl.tintColor = Styles.titleColor
+        tipPercentage?.percentageSegmentControl.backgroundColor = UIColor.black
+        
+        tip?.plusLabel.textColor = UIColor.white
+        tip?.tipAmountLabel.textColor = UIColor.white
+        tip?.tipAmountContentView.backgroundColor = UIColor.black
+        
+        finalAmount?.equalsLabel.textColor = UIColor.white
+        finalAmount?.finalAmountLabel.textColor = UIColor.white
+        finalAmount?.finalAmountContentView.backgroundColor = UIColor.black
+        
+        tableView.tableFooterView?.backgroundColor = UIColor.black
+    }
+    
+    func lightTheme(){
+        
+        input?.inputTextContentView.backgroundColor = Styles.inputViewCell
+        input?.inputTextField.textColor = UIColor.black
+        
+        tipPercentage?.tipPercentageContentView.backgroundColor = Styles.inputViewCell
+        tipPercentage?.tintColor = UIColor.darkGray
+        tipPercentage?.percentageSegmentControl.tintColor = UIColor.darkGray
+        tipPercentage?.percentageSegmentControl.backgroundColor = Styles.inputViewCell
+        
+        tip?.plusLabel.textColor = UIColor.black
+        tip?.tipAmountLabel.textColor = UIColor.black
+        tip?.tipAmountContentView.backgroundColor = Styles.tipFinalAmountCell
+        
+        finalAmount?.equalsLabel.textColor = UIColor.black
+        finalAmount?.finalAmountLabel.textColor = UIColor.black
+        finalAmount?.finalAmountContentView.backgroundColor = Styles.tipFinalAmountCell
+    }
+    
     
     
     func textFieldDidChange(textField: UITextField){
@@ -178,6 +241,7 @@ extension TipTableViewController{
             
             //required to access input cell
             self.input = cell
+            self.checkThemeState()
             
             return cell
             
@@ -190,6 +254,8 @@ extension TipTableViewController{
             cell.isHidden = true
             
             cell.percentageSegmentControl.addTarget(self, action:#selector(tipChange), for: .valueChanged)
+            
+            self.checkThemeState()
     
             return cell
             
@@ -202,6 +268,8 @@ extension TipTableViewController{
             self.tip = cell
             
             cell.isHidden = true
+            
+            self.checkThemeState()
         
             return cell
             
@@ -211,7 +279,9 @@ extension TipTableViewController{
             
             self.finalAmount = cell
             
-             cell.isHidden = true
+            cell.isHidden = true
+            
+            self.checkThemeState()
             
             return cell
         }
