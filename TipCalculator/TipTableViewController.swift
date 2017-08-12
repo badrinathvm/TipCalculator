@@ -23,11 +23,6 @@ class TipTableViewController: UITableViewController {
     
     
     
-    
-    
-    
-    
-    
     struct Storyboard{
         static let inputView = "InputViewCell"
         static let tipPercentage = "TipPercentageViewCell"
@@ -122,9 +117,15 @@ class TipTableViewController: UITableViewController {
     func textFieldDidChange(textField: UITextField){
         
         if var amount = textField.text?.formatCurrency() {
-            print("Amount is \((amount))")
+            print("\((amount))")
             amount = amount.replacingOccurrences(of: ",", with: "")
             input?.updateTextValue = amount
+            
+            if(amount == ""){
+                self.tip?.isHidden = true
+                self.tipPercentage?.isHidden = true
+                self.finalAmount?.isHidden = true
+            }
             
         
             if  (amount.characters.count > 0 ){
