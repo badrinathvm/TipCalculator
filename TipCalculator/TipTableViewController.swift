@@ -49,7 +49,6 @@ class TipTableViewController: UITableViewController {
         }
         
         self.checkThemeState()
-        
     }
 
     
@@ -61,7 +60,6 @@ class TipTableViewController: UITableViewController {
     }
     
     func checkThemeState(){
-        
         let defaults = UserDefaults.standard
         if let stateChange = defaults.object(forKey: "state") as? String {
             if (stateChange == "dark"){
@@ -70,7 +68,6 @@ class TipTableViewController: UITableViewController {
                 self.lightTheme()
             }
         }
-
     }
     
     func darkTheme(){
@@ -153,7 +150,7 @@ class TipTableViewController: UITableViewController {
                 
                 self.saveFormattedAmount(finalAmount: (self.simplifiedAmount)!)
                 
-                
+                //self.retainState(finalAmount: (finalAmount?.finalResult)! , tipAmount: (tip?.tipAmount)! , enteredAmount: (self.simplifiedAmount)!)
             }
         }
         
@@ -208,7 +205,15 @@ class TipTableViewController: UITableViewController {
         defaults.set(finalAmount, forKey: "textFieldAmount")
         defaults.synchronize()
     }
-
+    
+//    func retainState(finalAmount: Double, tipAmount: Double, enteredAmount:Double){
+//        let defaults = UserDefaults.standard
+//        defaults.set(finalAmount, forKey: "finalAmount")
+//        defaults.set(tipAmount, forKey: "tipAmount")
+//        defaults.set(enteredAmount, forKey: "enteredAmount")
+//        defaults.synchronize()
+//
+//    }
     
 }
 
@@ -243,6 +248,7 @@ extension TipTableViewController{
             //required to access input cell
             self.input = cell
             self.checkThemeState()
+            //self.retainCells(input:self.input!)
             
             return cell
             

@@ -12,6 +12,8 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var oldDate = NSDate()
+    var tipTableViewController = TipTableViewController()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -25,12 +27,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        //Stroing the date when app goes to background
+        self.storeStateDate(oldDate: oldDate)
+        
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        
+        let defaults = UserDefaults.standard
+        
+        if let oldStateDate = defaults.object(forKey: "oldDate") as? NSDate {
+            
+            print("Previous Date is \(oldStateDate)")
+            print("Current Date is \(NSDate())")
+            
+            let minDiff = (NSDate() as Date).offsetFrom(date: oldStateDate as Date)
+            
+            let minDifference = minDiff.components(separatedBy: "m")
+            
+            print("Difference in mins  \(minDifference)")
+            
+            if (Int(minDifference[0]) != nil && Int(minDifference[0])! >= 10 ){
+
+                //Reload UI
+
+                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                
+                let vc = mainStoryboard.instantiateViewController(withIdentifier: "TipTableViewController") as! TipTableViewController
+
+                let navigationController = UINavigationController(rootViewController: vc)
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.window?.rootViewController = navigationController
+                
+            }
+        }
+        
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -48,7 +80,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, shouldRestoreApplicationState coder: NSCoder) -> Bool {
         return true
     }
+    
+    func storeStateDate(oldDate: NSDate){
+        let defaults = UserDefaults.standard
+        defaults.set(oldDate, forKey: "oldDate")
+        defaults.synchronize()
+    }
 
 
 }
+
+//
+//code for later use
+// 
+// 
+// 
+//  else {
+// print("Retain State")
+// 
+// guard let finalAmount = defaults.object(forKey: "finalAmount") as? Double ,let tipAmount = defaults.object(forKey: "tipAmount") as? Double, let enteredAmount = defaults.object(forKey: "enteredAmount") as? Double else{
+// 
+// return
+// }
+// 
+// Paint it to UI
+// print(finalAmount)
+// print(tipAmount)
+// print(enteredAmount)
+// 
+// 
+// }
 
