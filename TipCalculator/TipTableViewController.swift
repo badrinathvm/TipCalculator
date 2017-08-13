@@ -37,6 +37,7 @@ class TipTableViewController: UITableViewController {
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         
         tableView.tableFooterView = UIView()
+        print(tableView)
         
     }
     
@@ -52,12 +53,12 @@ class TipTableViewController: UITableViewController {
     }
 
     
-    override func viewDidAppear(_ animated: Bool) {
+   /* override func viewDidAppear(_ animated: Bool) {
         if(TipTableViewController.backFlag){
             self.tipChange()
         }
      
-    }
+    }*/
     
     func checkThemeState(){
         let defaults = UserDefaults.standard
