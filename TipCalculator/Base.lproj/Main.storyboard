@@ -243,16 +243,64 @@
                                     </switch>
                                 </subviews>
                             </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fpP-Gt-Wcw">
+                                <rect key="frame" x="0.0" y="374" width="375" height="73"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="73" id="6tP-1h-k5d"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CountryNameViewCell" id="5Wc-Iq-Ife" customClass="CountryNameViewCell" customModule="TipCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Wc-Iq-Ife" id="kcx-nu-W0c">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="W1h-hQ-JRg">
+                                                    <rect key="frame" x="14" y="4" width="334" height="35.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Region Format" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NtU-PP-FIU">
+                                                            <rect key="frame" x="0.0" y="0.0" width="131" height="35.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="United States of America" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LV8-S2-oum">
+                                                            <rect key="frame" x="143" y="0.0" width="191" height="35.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="W1h-hQ-JRg" secondAttribute="bottom" constant="4" id="A8S-6P-4C6"/>
+                                                <constraint firstAttribute="trailing" secondItem="W1h-hQ-JRg" secondAttribute="trailing" constant="-6" id="fBG-Db-Pxf"/>
+                                                <constraint firstItem="W1h-hQ-JRg" firstAttribute="top" secondItem="kcx-nu-W0c" secondAttribute="top" constant="4" id="kIT-Io-zhd"/>
+                                                <constraint firstItem="W1h-hQ-JRg" firstAttribute="leading" secondItem="kcx-nu-W0c" secondAttribute="leading" constant="14" id="wF2-pV-ZHZ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="countryNameLabel" destination="LV8-S2-oum" id="AnQ-1i-YMY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fpP-Gt-Wcw" secondAttribute="trailing" id="3tI-SS-wcR"/>
                             <constraint firstAttribute="trailing" secondItem="FF8-i9-IV3" secondAttribute="trailing" constant="24" id="Evd-My-Sls"/>
                             <constraint firstItem="YLy-Ah-JgN" firstAttribute="leading" secondItem="grw-cr-ThH" secondAttribute="leading" constant="12" id="Hie-ZQ-G7B"/>
                             <constraint firstItem="FF8-i9-IV3" firstAttribute="top" secondItem="jD3-hA-a2X" secondAttribute="bottom" constant="80" id="JX3-bc-uIe"/>
                             <constraint firstAttribute="trailing" secondItem="YLy-Ah-JgN" secondAttribute="trailing" constant="12" id="NAW-AI-HeE"/>
+                            <constraint firstItem="fpP-Gt-Wcw" firstAttribute="top" secondItem="FF8-i9-IV3" secondAttribute="bottom" constant="73" id="WHe-8v-Lpe"/>
                             <constraint firstAttribute="trailing" secondItem="jD3-hA-a2X" secondAttribute="trailing" constant="12" id="cgp-rn-TSn"/>
                             <constraint firstItem="jD3-hA-a2X" firstAttribute="top" secondItem="YLy-Ah-JgN" secondAttribute="bottom" constant="30" id="eKY-7k-1h8"/>
                             <constraint firstItem="jD3-hA-a2X" firstAttribute="centerX" secondItem="grw-cr-ThH" secondAttribute="centerX" id="gLc-bn-pPW"/>
+                            <constraint firstItem="fpP-Gt-Wcw" firstAttribute="leading" secondItem="grw-cr-ThH" secondAttribute="leading" id="qCG-9V-rYn"/>
                             <constraint firstItem="YLy-Ah-JgN" firstAttribute="top" secondItem="Z9L-w9-Znv" secondAttribute="bottom" constant="40" id="sxW-aD-ahh"/>
                             <constraint firstItem="FF8-i9-IV3" firstAttribute="leading" secondItem="grw-cr-ThH" secondAttribute="leading" constant="10" id="xUj-up-ilc"/>
                             <constraint firstItem="jD3-hA-a2X" firstAttribute="leading" secondItem="grw-cr-ThH" secondAttribute="leading" constant="12" id="y9p-m1-Wjs"/>
@@ -261,6 +309,7 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="countryTableView" destination="fpP-Gt-Wcw" id="BxG-1k-bv8"/>
                         <outlet property="darkThemeLabel" destination="r1t-zV-kGS" id="OBN-7P-lpm"/>
                         <outlet property="defaultTipAmountLabel" destination="YLy-Ah-JgN" id="lSx-Xh-lYf"/>
                         <outlet property="segmentControl" destination="jD3-hA-a2X" id="SHU-8F-a0x"/>
@@ -270,7 +319,57 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kfc-Q2-aBT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1358" y="315"/>
+            <point key="canvasLocation" x="1357.5999999999999" y="314.84257871064472"/>
+        </scene>
+        <!--Country Table View Controller-->
+        <scene sceneID="t46-7X-5XB">
+            <objects>
+                <tableViewController storyboardIdentifier="CountryTableViewController" automaticallyAdjustsScrollViewInsets="NO" id="deo-kE-7Ik" customClass="CountryTableViewController" customModule="TipCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="APk-iw-Mgt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="UD1-yg-rao">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CountryListViewCell" id="K8O-e3-lSJ" customClass="CountryListViewCell" customModule="TipCalculator" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="K8O-e3-lSJ" id="Syp-Jd-69O">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="United States of America" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32U-uu-6Cr">
+                                            <rect key="frame" x="24" y="10" width="326" height="28"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="32U-uu-6Cr" firstAttribute="top" secondItem="Syp-Jd-69O" secondAttribute="top" constant="10" id="1Cf-8l-wCh"/>
+                                        <constraint firstAttribute="bottom" secondItem="32U-uu-6Cr" secondAttribute="bottom" constant="5" id="J7A-U9-AJq"/>
+                                        <constraint firstAttribute="trailing" secondItem="32U-uu-6Cr" secondAttribute="trailing" constant="25" id="Z82-LY-QQ9"/>
+                                        <constraint firstItem="32U-uu-6Cr" firstAttribute="leading" secondItem="Syp-Jd-69O" secondAttribute="leading" constant="24" id="uY7-dO-qy7"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="countryListLabel" destination="32U-uu-6Cr" id="3n3-dL-yyY"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="deo-kE-7Ik" id="E3z-iG-Up5"/>
+                            <outlet property="delegate" destination="deo-kE-7Ik" id="M1u-YJ-ia0"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="clE-Wh-snS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2120.8000000000002" y="210.94452773613196"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JWZ-le-H8n">

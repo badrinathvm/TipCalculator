@@ -10,7 +10,17 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
+    @IBOutlet weak var countryTableView: UITableView!
+    
     @IBOutlet var segmentControl: UISegmentedControl!
+    
+    @IBOutlet var viewForTheme: UIView!
+    
+    @IBOutlet weak var darkThemeLabel: UILabel!
+    
+    @IBOutlet weak var defaultTipAmountLabel: UILabel!
+    
+    @IBOutlet weak var switchControl: UISwitch!
     
     @IBAction func segmentChange(_ sender: AnyObject) {
         
@@ -27,8 +37,6 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var switchControl: UISwitch!
-    
     @IBAction func darkThemeEnabled(_ sender: Any) {
         if switchControl.isOn {
             print("Switch is on")
@@ -41,12 +49,11 @@ class SettingsViewController: UIViewController {
         
     }
     
+    struct Storyboard{
+        static let countryNameView = "CountryNameViewCell"
+        static let countryTVC = "CountryTableViewController"
+    }
     
-    @IBOutlet var viewForTheme: UIView!
-    
-    @IBOutlet weak var darkThemeLabel: UILabel!
-    
-    @IBOutlet weak var defaultTipAmountLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +61,9 @@ class SettingsViewController: UIViewController {
         let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(SettingsViewController.back))
         TipTableViewController.backFlag = true
         self.navigationItem.leftBarButtonItem = newBackButton
+        
+        self.countryTableView.delegate = self
+        self.countryTableView.dataSource = self
 
     }
     
@@ -101,6 +111,49 @@ class SettingsViewController: UIViewController {
         self.defaultTipAmountLabel.textColor = UIColor.black
     }
 
+}
+
+extension SettingsViewController : UITableViewDelegate,UITableViewDataSource{
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return 1
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if (indexPath.row == 0){
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.countryNameView, for: indexPath) as! CountryNameViewCell
+            
+            return cell
+        
+        }
+        
+        return UITableViewCell()
+        
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Select Country"
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("selected row is \(indexPath.row)")
+        
+        if (indexPath.row == 0){
+            
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.countryTVC) as! CountryTableViewController
+            //let navigationController = UINavigationController(rootViewController: vc)
+            //vc.token = token!
+            self.present(vc, animated: true, completion: nil)
+            
+        }
+    }
+
+    
 }
 
 
