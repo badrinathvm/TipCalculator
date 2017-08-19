@@ -25,7 +25,7 @@ The following **additional** features are implemented:
 - [ ] List anything else that you can get done to improve the app functionality!
 
 
-<img src='https://media.giphy.com/media/l1J3RYnqviK4Vt7y0/giphy.gif' title='Video Walkthrough of Tip Calculator' width='' alt='Video Walkthrough of Tip Calculator With Theme' />
+<img src='https://media.giphy.com/media/26n6B8hAxowM19Gve/giphy.gif' title='Video Walkthrough of Tip Calculator' width='' alt='Video Walkthrough of Tip Calculator With Theme' />
 
 
 For Feature: Remembering the bill amount across app restarts  ( Keep a eye on Time )
