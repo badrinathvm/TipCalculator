@@ -21,6 +21,7 @@
 		05BFE9391F47C66100BEC200 /* CountryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BFE9381F47C66100BEC200 /* CountryTableViewController.swift */; };
 		05BFE93B1F482AC800BEC200 /* CountryListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BFE93A1F482AC800BEC200 /* CountryListViewCell.swift */; };
 		05E245A41F397AB600148A5A /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E245A31F397AB600148A5A /* Styles.swift */; };
+		05E5D1B31F485E4E008241C7 /* CurrencyRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E5D1B21F485E4E008241C7 /* CurrencyRate.swift */; };
 		236AA707D8193FC71A140F26 /* Pods_TipCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88532407EAA24A0F81F9FF26 /* Pods_TipCalculator.framework */; };
 		E5FE34EB1F326C8E00C20A22 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FE34EA1F326C8E00C20A22 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,7 @@
 		05BFE9381F47C66100BEC200 /* CountryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryTableViewController.swift; sourceTree = "<group>"; };
 		05BFE93A1F482AC800BEC200 /* CountryListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryListViewCell.swift; sourceTree = "<group>"; };
 		05E245A31F397AB600148A5A /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
+		05E5D1B21F485E4E008241C7 /* CurrencyRate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyRate.swift; sourceTree = "<group>"; };
 		2E065404D3292C86C4866DAA /* Pods-TipCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipCalculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TipCalculator/Pods-TipCalculator.debug.xcconfig"; sourceTree = "<group>"; };
 		7D7237AED8DF0858CB44A601 /* Pods-TipCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipCalculator.release.xcconfig"; path = "Pods/Target Support Files/Pods-TipCalculator/Pods-TipCalculator.release.xcconfig"; sourceTree = "<group>"; };
 		88532407EAA24A0F81F9FF26 /* Pods_TipCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TipCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +131,7 @@
 			children = (
 				0577CB4B1F31A4590072BEE2 /* HelperExtensions.swift */,
 				05E245A31F397AB600148A5A /* Styles.swift */,
+				05E5D1B21F485E4E008241C7 /* CurrencyRate.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				0577CB4C1F31A4590072BEE2 /* HelperExtensions.swift in Sources */,
 				05BFE9391F47C66100BEC200 /* CountryTableViewController.swift in Sources */,
 				05BFE93B1F482AC800BEC200 /* CountryListViewCell.swift in Sources */,
+				05E5D1B31F485E4E008241C7 /* CurrencyRate.swift in Sources */,
 				0577CB461F312DC30072BEE2 /* TipPercentageViewCell.swift in Sources */,
 				0577CB421F311D400072BEE2 /* InputViewCell.swift in Sources */,
 				05BFE9371F47C17E00BEC200 /* CountryNameViewCell.swift in Sources */,

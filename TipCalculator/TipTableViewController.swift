@@ -18,6 +18,7 @@ class TipTableViewController: UITableViewController {
     var finalAmount:FinalAmountViewCell?
     var tipPercentage:TipPercentageViewCell?
     static var backFlag:Bool = false
+    var localeType:String = ""
     
     //Fields for color Changes
     
@@ -39,8 +40,10 @@ class TipTableViewController: UITableViewController {
         tableView.tableFooterView = UIView()
         print(tableView)
         
+        //formatIntCurrency(value: 0.01, code: self.localeType)
     }
     
+        
     override func viewWillAppear(_ animated: Bool) {
         let defaults = UserDefaults.standard
         
@@ -55,9 +58,8 @@ class TipTableViewController: UITableViewController {
         if let selectedCode = defaults.object(forKey: "code") as? String {
             //tipPercentage?.selectIndex = Int(percentageIndex)
             print("Selected Code is \(selectedCode)")
+            self.localeType = selectedCode
         }
-        
-        
         
     }
 
@@ -120,14 +122,50 @@ class TipTableViewController: UITableViewController {
     }
     
     
+    func formatIntCurrency(value: Double,code:String) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        //formatter.maximumFractionDigits = 2
+        formatter.maximumFractionDigits = 2
+        formatter.locale = Locale(identifier: CurrencyRate.defaultLocaleTable[code]!)
+        let result = formatter.string(from: value as NSNumber)
+        
+        //var amountWithPrefix = self
+        
+        // remove from String: "$", ".", ","
+//        let regex = try! NSRegularExpression(pattern: "[^0-9]", options: .caseInsensitive)
+//        amountWithPrefix = regex.stringByReplacingMatches(in: String(amountWithPrefix), options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.characters.count), withTemplate: "")
+//        
+//        var number: NSNumber!
+//        
+//        //let double = (amountWithPrefix).doubleValue
+//        number = NSNumber(value: (value / 100))
+//        
+//        // if first number is 0 or all numbers were deleted
+//        guard number != 0 as NSNumber else {
+//            return ""
+//        }
+        
+       // return formatter.string(from: number)!
+
+        
+
+        return result!
+    }
+    
     
     func textFieldDidChange(textField: UITextField){
         
         if var amount = textField.text?.formatCurrency() {
             print("\((amount))")
             amount = amount.replacingOccurrences(of: ",", with: "")
+            /* if ( !(amount == "") ){
+                  amount = amount.substring(from: amount.index(amount.startIndex,offsetBy:1))
+                  input?.updateTextValue = self.formatIntCurrency(value: Double(amount)!)
+            } */
             input?.updateTextValue = amount
-            
+        
+          
             if(amount == ""){
                 self.tip?.isHidden = true
                 self.tipPercentage?.isHidden = true
@@ -151,12 +189,20 @@ class TipTableViewController: UITableViewController {
                     self.simplifiedAmount = Double(amount.substring(from: 1))!
                 }
                 
+        
                 //Calculatin tip amount
                 let simplifiedTipAmount = (self.simplifiedAmount! * Double(TipTableViewController.percentageHolder/100.0)).roundTo(places: 2)
                 tip?.tipAmount = simplifiedTipAmount
                 
+                tip?.tipAmountLabel.text = self.formatIntCurrency(value: simplifiedTipAmount,code: localeType)
+                
+                
                 //Calculating final amount
                finalAmount?.finalResult = (self.simplifiedAmount! + simplifiedTipAmount).roundTo(places:2)
+                
+                
+                let fin:Double = Double((self.simplifiedAmount! + simplifiedTipAmount).roundTo(places:2))
+                finalAmount?.finalAmountLabel.text = formatIntCurrency(value: fin,code: localeType)
                 
                 self.saveFormattedAmount(finalAmount: (self.simplifiedAmount)!)
             }

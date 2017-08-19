@@ -30,6 +30,7 @@ extension String {
         formatter.currencySymbol = "$"
         formatter.maximumFractionDigits = 2
         formatter.minimumFractionDigits = 2
+        //formatter.locale = Locale(identifier: "hi_IN")
         
         var amountWithPrefix = self
         
@@ -47,7 +48,6 @@ extension String {
         
         return formatter.string(from: number)!
     }
-    
     
     func index(from: Int) -> Index {
         return self.index(startIndex, offsetBy: from)
@@ -76,6 +76,18 @@ extension Double {
         let divisor = pow(10.0, Double(places))
         return (self * divisor).rounded() / divisor
     }
+    
+    /// Formats the receiver as a currency string using the specified three digit currencyCode. Currency codes are based on the ISO 4217 standard.
+ 
+    func formatIntCurrency(value: Double) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.maximumFractionDigits = 2
+        formatter.locale = Locale(identifier: Locale.current.identifier)
+        let result = formatter.string(from: value as NSNumber)
+        return result!
+    }
+ 
 }
 
 extension Date {
@@ -98,4 +110,5 @@ extension Date {
     }
     
 }
+
 

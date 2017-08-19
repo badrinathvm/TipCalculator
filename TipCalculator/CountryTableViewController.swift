@@ -200,9 +200,7 @@ extension CountryTableViewController{
         print(vc.selectedCode)
         self.present(navigationController, animated: true, completion: nil)
     }
-    
-
-    
+        
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         
         return Array(self.letters).sorted()

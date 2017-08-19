@@ -13,6 +13,7 @@ class SettingsViewController: UIViewController {
     var selectedCountry:String = ""
     var backFlag:Bool = false
     var selectedCode:String = ""
+    let defaults = UserDefaults.standard
     
     @IBOutlet weak var countryTableView: UITableView!
     
@@ -72,6 +73,10 @@ class SettingsViewController: UIViewController {
         if ( self.selectedCode.characters.count>0){
             self.setCountryCode(code: self.selectedCode)
         }
+        
+        if (backFlag){
+            self.setSelectedCountry(country:self.selectedCountry)
+        }
 
     }
     
@@ -87,9 +92,6 @@ class SettingsViewController: UIViewController {
                 self.lightTheme()
             }
         }
-        
-
-
     }
     
     func back(){
@@ -115,6 +117,12 @@ class SettingsViewController: UIViewController {
     func setCountryCode(code:String){
         let defaults = UserDefaults.standard
         defaults.set(code, forKey: "code")
+        defaults.synchronize()
+    }
+    
+    func setSelectedCountry(country:String){
+        let defaults = UserDefaults.standard
+        defaults.set(country, forKey: "country")
         defaults.synchronize()
     }
     
@@ -149,9 +157,13 @@ extension SettingsViewController : UITableViewDelegate,UITableViewDataSource{
             
             let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.countryNameView, for: indexPath) as! CountryNameViewCell
             
-            if self.backFlag{
-                cell.ctyNameLabel = self.selectedCountry
-            }
+           // if self.backFlag{
+                
+                if let selectedCountry = defaults.object(forKey: "country") as? String {
+                    print("Selected country is \(selectedCountry)")
+                    cell.ctyNameLabel = selectedCountry
+                }
+            //}
             
             return cell
         
