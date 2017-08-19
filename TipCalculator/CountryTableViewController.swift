@@ -183,6 +183,17 @@ extension CountryTableViewController{
         return self.countryTupleArray[section].key
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        print("Selected one \(self.countryTupleArray[indexPath.section].value[indexPath.row])")
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
+        let navigationController = UINavigationController(rootViewController: vc)
+        vc.selectedCountry = self.countryTupleArray[indexPath.section].value[indexPath.row]
+        vc.backFlag = true
+        self.present(navigationController, animated: true, completion: nil)
+    }
+    
 
     
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {

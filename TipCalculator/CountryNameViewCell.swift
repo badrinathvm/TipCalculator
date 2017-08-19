@@ -11,5 +11,12 @@ import UIKit
 class CountryNameViewCell: UITableViewCell {
 
     @IBOutlet weak var countryNameLabel: UILabel!
+    
+    
+    var ctyNameLabel:String!{
+        didSet{
+            self.countryNameLabel.text = ctyNameLabel!
+        }
+    }
 
 }

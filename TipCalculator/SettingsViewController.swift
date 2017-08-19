@@ -10,6 +10,9 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
+    var selectedCountry:String = ""
+    var backFlag:Bool = false
+    
     @IBOutlet weak var countryTableView: UITableView!
     
     @IBOutlet var segmentControl: UISegmentedControl!
@@ -128,6 +131,10 @@ extension SettingsViewController : UITableViewDelegate,UITableViewDataSource{
             
             let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.countryNameView, for: indexPath) as! CountryNameViewCell
             
+            if self.backFlag{
+                cell.ctyNameLabel = self.selectedCountry
+            }
+            
             return cell
         
         }
@@ -137,7 +144,7 @@ extension SettingsViewController : UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Select Country"
+        return "Select Region"
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
