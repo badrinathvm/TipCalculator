@@ -50,6 +50,15 @@ class TipTableViewController: UITableViewController {
         }
         
         self.checkThemeState()
+        
+        
+        if let selectedCode = defaults.object(forKey: "code") as? String {
+            //tipPercentage?.selectIndex = Int(percentageIndex)
+            print("Selected Code is \(selectedCode)")
+        }
+        
+        
+        
     }
 
     
@@ -150,8 +159,6 @@ class TipTableViewController: UITableViewController {
                finalAmount?.finalResult = (self.simplifiedAmount! + simplifiedTipAmount).roundTo(places:2)
                 
                 self.saveFormattedAmount(finalAmount: (self.simplifiedAmount)!)
-                
-                //self.retainState(finalAmount: (finalAmount?.finalResult)! , tipAmount: (tip?.tipAmount)! , enteredAmount: (self.simplifiedAmount)!)
             }
         }
         

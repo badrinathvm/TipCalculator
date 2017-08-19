@@ -14,15 +14,14 @@ class CountryTableViewController: UITableViewController {
     
     var countryDict:[String:String] = [:]
     var countryName:[String] = []
-    var countryCode:[String] = []
+    var countryCode:[String:String] = [:]
     var letters = Set<String>()
     
     var countryArray = [Country]()
     var filteredDictionary:[String:[String]] = [:]
-    //var countryTupleArray = [key:String(),value:[String]] as [Any]
-    
-    
     var countryTupleArray: [(key: String, value: [String])] = []
+    
+    
     
     struct Storyboard{
         static let countryListView = "CountryListViewCell"
@@ -87,9 +86,15 @@ class CountryTableViewController: UITableViewController {
                     
                     for code in data["currencies"].array! {
                         //print(code["code"])
-                        self.countryCode.append(String(describing: code["symbol"]))
+                        //self.countryCode.append(String(describing: code["symbol"]))
+                        
+                        self.countryCode[ String(describing: data["name"])] = String(describing: code["code"])
                     }
                 }
+                
+                
+                print(self.countryCode)
+                
                 
                 for element in self.countryName {
                     self.letters.insert(String(element.characters.first!))
@@ -191,6 +196,8 @@ extension CountryTableViewController{
         let navigationController = UINavigationController(rootViewController: vc)
         vc.selectedCountry = self.countryTupleArray[indexPath.section].value[indexPath.row]
         vc.backFlag = true
+        vc.selectedCode = self.countryCode[self.countryTupleArray[indexPath.section].value[indexPath.row]]!
+        print(vc.selectedCode)
         self.present(navigationController, animated: true, completion: nil)
     }
     

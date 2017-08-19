@@ -12,6 +12,7 @@ class SettingsViewController: UIViewController {
     
     var selectedCountry:String = ""
     var backFlag:Bool = false
+    var selectedCode:String = ""
     
     @IBOutlet weak var countryTableView: UITableView!
     
@@ -67,11 +68,16 @@ class SettingsViewController: UIViewController {
         
         self.countryTableView.delegate = self
         self.countryTableView.dataSource = self
+        
+        if ( self.selectedCode.characters.count>0){
+            self.setCountryCode(code: self.selectedCode)
+        }
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
         let defaults = UserDefaults.standard
+        
         if let stateChange = defaults.object(forKey: "state") as? String {
             if (stateChange == "dark"){
                 self.switchControl.isOn = true
@@ -81,11 +87,17 @@ class SettingsViewController: UIViewController {
                 self.lightTheme()
             }
         }
+        
+
 
     }
     
     func back(){
-        self.navigationController?.popViewController(animated: false)
+        //self.navigationController?.popViewController(animated: false)
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "TipTableViewController") as! TipTableViewController
+        let navigationController = UINavigationController(rootViewController: vc)
+        self.present(navigationController, animated: true, completion: nil)
     }
     
     func savePercentage(percentageIndex:String){
@@ -97,6 +109,12 @@ class SettingsViewController: UIViewController {
     func setThemeColor(state:String){
         let defaults = UserDefaults.standard
         defaults.set(state, forKey: "state")
+        defaults.synchronize()
+    }
+    
+    func setCountryCode(code:String){
+        let defaults = UserDefaults.standard
+        defaults.set(code, forKey: "code")
         defaults.synchronize()
     }
     
