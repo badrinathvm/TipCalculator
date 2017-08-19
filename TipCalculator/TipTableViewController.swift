@@ -243,10 +243,16 @@ class TipTableViewController: UITableViewController {
                 
                 self.tip?.tipAmount = simplifiedTipAmount
                 
+                tip?.tipAmountLabel.text = self.formatIntCurrency(value: simplifiedTipAmount,code: localeType)
+                
                 //print(self.tip?.tipAmount)
                 
                 //Calculating final amount
                 self.finalAmount?.finalResult = (amount + simplifiedTipAmount).roundTo(places:2)
+                
+                let fin:Double = Double((self.simplifiedAmount! + simplifiedTipAmount).roundTo(places:2))
+                finalAmount?.finalAmountLabel.text = formatIntCurrency(value: fin,code: localeType)
+                
                 
             }
             
