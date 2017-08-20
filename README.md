@@ -23,7 +23,9 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 - [ ] List anything else that you can get done to improve the app functionality!
+* [x] Adopted Tip calculation based on the country wise - Fetchign the country lists and code's via rest service.
 
+<img src='https://media.giphy.com/media/l3fzLF6bzICiJYDKg/giphy.gif' title='Video Walkthrough of Tip Calculator' width='' alt='Video Walkthrough of Tip Calculator Country wise' />
 
 <img src='https://media.giphy.com/media/26n6B8hAxowM19Gve/giphy.gif' title='Video Walkthrough of Tip Calculator' width='' alt='Video Walkthrough of Tip Calculator With Theme' />
 
