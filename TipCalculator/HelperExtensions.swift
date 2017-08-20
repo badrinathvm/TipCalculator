@@ -22,16 +22,21 @@ extension String {
         return NumberFormatters.instance.number(from: self)?.intValue
     }
     
-    func formatCurrency() -> String {
+    
+    func getSymbolForCurrencyCode(code: String) -> String? {
+        let locale = NSLocale(localeIdentifier: code)
+        return locale.displayName(forKey: NSLocale.Key.currencySymbol, value: code)
+    }
+    
+    func formatCurrency(countryCode:String) -> String {
         
         var number: NSNumber!
         let formatter = NumberFormatter()
         formatter.numberStyle = .currencyAccounting
-        formatter.currencySymbol = "$"
+        formatter.currencySymbol = getSymbolForCurrencyCode(code: countryCode)
         formatter.maximumFractionDigits = 2
         formatter.minimumFractionDigits = 2
-        //formatter.locale = Locale(identifier: "hi_IN")
-        
+    
         var amountWithPrefix = self
         
         // remove from String: "$", ".", ","

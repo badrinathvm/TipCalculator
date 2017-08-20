@@ -22,8 +22,6 @@ class TipTableViewController: UITableViewController {
     
     //Fields for color Changes
     
-    
-    
     struct Storyboard{
         static let inputView = "InputViewCell"
         static let tipPercentage = "TipPercentageViewCell"
@@ -40,7 +38,6 @@ class TipTableViewController: UITableViewController {
         tableView.tableFooterView = UIView()
         print(tableView)
         
-        //formatIntCurrency(value: 0.01, code: self.localeType)
     }
     
         
@@ -62,14 +59,6 @@ class TipTableViewController: UITableViewController {
         }
         
     }
-
-    
-   /* override func viewDidAppear(_ animated: Bool) {
-        if(TipTableViewController.backFlag){
-            self.tipChange()
-        }
-     
-    }*/
     
     func checkThemeState(){
         let defaults = UserDefaults.standard
@@ -129,40 +118,16 @@ class TipTableViewController: UITableViewController {
         formatter.maximumFractionDigits = 2
         formatter.locale = Locale(identifier: CurrencyRate.defaultLocaleTable[code]!)
         let result = formatter.string(from: value as NSNumber)
-        
-        //var amountWithPrefix = self
-        
-        // remove from String: "$", ".", ","
-//        let regex = try! NSRegularExpression(pattern: "[^0-9]", options: .caseInsensitive)
-//        amountWithPrefix = regex.stringByReplacingMatches(in: String(amountWithPrefix), options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.characters.count), withTemplate: "")
-//        
-//        var number: NSNumber!
-//        
-//        //let double = (amountWithPrefix).doubleValue
-//        number = NSNumber(value: (value / 100))
-//        
-//        // if first number is 0 or all numbers were deleted
-//        guard number != 0 as NSNumber else {
-//            return ""
-//        }
-        
-       // return formatter.string(from: number)!
-
-        
-
         return result!
     }
     
     
     func textFieldDidChange(textField: UITextField){
-        
-        if var amount = textField.text?.formatCurrency() {
+
+        if var amount = textField.text?.formatCurrency(countryCode:self.localeType) {
+            
             print("\((amount))")
             amount = amount.replacingOccurrences(of: ",", with: "")
-            /* if ( !(amount == "") ){
-                  amount = amount.substring(from: amount.index(amount.startIndex,offsetBy:1))
-                  input?.updateTextValue = self.formatIntCurrency(value: Double(amount)!)
-            } */
             input?.updateTextValue = amount
         
           
@@ -172,7 +137,7 @@ class TipTableViewController: UITableViewController {
                 self.finalAmount?.isHidden = true
             }
             
-        
+            
             if  (amount.characters.count > 0 ){
                 
                 //set back to original layout
@@ -266,14 +231,11 @@ class TipTableViewController: UITableViewController {
         defaults.synchronize()
     }
     
-//    func retainState(finalAmount: Double, tipAmount: Double, enteredAmount:Double){
-//        let defaults = UserDefaults.standard
-//        defaults.set(finalAmount, forKey: "finalAmount")
-//        defaults.set(tipAmount, forKey: "tipAmount")
-//        defaults.set(enteredAmount, forKey: "enteredAmount")
-//        defaults.synchronize()
-//
-//    }
+    
+    func getSymbolForCurrencyCode(code: String) -> String? {
+        let locale = NSLocale(localeIdentifier: code)
+        return locale.displayName(forKey: NSLocale.Key.currencySymbol, value: code)
+    }
     
 }
 
@@ -303,12 +265,14 @@ extension TipTableViewController{
             
             cell.topValue = 50.0
             
+            cell.inputTextField.placeholder = self.getSymbolForCurrencyCode(code: self.localeType)
+            
             cell.inputTextField.becomeFirstResponder()
             
             //required to access input cell
             self.input = cell
             self.checkThemeState()
-            //self.retainCells(input:self.input!)
+            
             
             return cell
             
