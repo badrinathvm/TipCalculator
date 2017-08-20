@@ -4,7 +4,7 @@
 
 Submitted by: **Badarinath Venkatnarayansetty**
 
-Time spent: **3-4** hours spent in total
+Time spent: **8-10** hours spent in total
 
 ## User Stories
 
@@ -23,7 +23,7 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 - [ ] List anything else that you can get done to improve the app functionality!
-* [x] Adopted Tip calculation based on the country wise - Fetchign the country lists and code's via rest service.
+* [x] Adopted Tip calculation based on the country wise - Fetching the country lists and code's via rest service.
 
 <img src='https://media.giphy.com/media/l3fzLF6bzICiJYDKg/giphy.gif' title='Video Walkthrough of Tip Calculator' width='' alt='Video Walkthrough of Tip Calculator Country wise' />
 
