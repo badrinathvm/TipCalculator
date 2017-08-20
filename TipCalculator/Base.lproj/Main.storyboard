@@ -159,7 +159,7 @@
                                             </subviews>
                                         </stackView>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.173167714" green="0.58227148399999995" blue="0.60047442480000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="0.17254901960784313" green="0.58039215686274503" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="ZlK-jd-WM2" firstAttribute="leading" secondItem="bBe-5d-YUF" secondAttribute="leading" constant="24" id="QBi-Au-2AG"/>
                                         <constraint firstItem="ZlK-jd-WM2" firstAttribute="top" secondItem="bBe-5d-YUF" secondAttribute="top" constant="12" id="Ukz-1w-j1J"/>
@@ -182,7 +182,8 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Tip Calculator" id="guT-Si-MVY">
-                        <barButtonItem key="rightBarButtonItem" title="Settings" id="o66-hF-lyc">
+                        <barButtonItem key="rightBarButtonItem" image="settings" id="o66-hF-lyc">
+                            <color key="tintColor" red="0.17254901959999999" green="0.58039215690000001" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="NrN-b7-8kV" kind="show" id="DcG-pK-bSR"/>
                             </connections>
@@ -319,7 +320,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kfc-Q2-aBT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1357.5999999999999" y="314.84257871064472"/>
+            <point key="canvasLocation" x="1247" y="303"/>
         </scene>
         <!--Country Table View Controller-->
         <scene sceneID="t46-7X-5XB">
@@ -388,4 +389,7 @@
             <point key="canvasLocation" x="-363" y="304"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="settings" width="25" height="25"/>
+    </resources>
 </document>

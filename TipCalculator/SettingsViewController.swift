@@ -184,7 +184,6 @@ extension SettingsViewController : UITableViewDelegate,UITableViewDataSource{
             
             let vc = self.storyboard?.instantiateViewController(withIdentifier: Storyboard.countryTVC) as! CountryTableViewController
             //let navigationController = UINavigationController(rootViewController: vc)
-            //vc.token = token!
             self.present(vc, animated: true, completion: nil)
             
         }

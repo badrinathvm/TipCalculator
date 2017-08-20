@@ -25,6 +25,7 @@ class CountryTableViewController: UITableViewController {
     
     struct Storyboard{
         static let countryListView = "CountryListViewCell"
+        static let SettingsViewController = "SettingsViewController"
     }
     
     struct Country{
@@ -192,7 +193,7 @@ extension CountryTableViewController{
         
         print("Selected one \(self.countryTupleArray[indexPath.section].value[indexPath.row])")
         
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: CountryTableViewController.Storyboard.SettingsViewController) as! SettingsViewController
         let navigationController = UINavigationController(rootViewController: vc)
         vc.selectedCountry = self.countryTupleArray[indexPath.section].value[indexPath.row]
         vc.backFlag = true
